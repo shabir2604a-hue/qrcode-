@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QrCode Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 style="marjin-left: 400px;">Qr Code Generator</h1>
+        <input type="text" id="text" placeholder="Enter your text">
+        <button class="btn btn-success" onclick="generator()">Click</button>
+        <div id="qrcode"></div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+
+        function generator() {
+            let text = document.getElementById("text").value;
+            document.getElementById("qrcode").innerHTML = "";
+
+            new QRCode(document.getElementById("qrcode"), text)
+        }
+
+    </script>
+</body>
+
+</html>
